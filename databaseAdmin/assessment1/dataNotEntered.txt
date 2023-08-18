@@ -1,0 +1,14 @@
+duplacate
+GKY3212,Davida,MacCurlye,1965-09-30
+GKY3212,Delila,Ladbrooke,2006-08-19
+SYK7786,Gabe,Broschke,1991-11-25
+SYK7786,Silas,Lipgens,1961-11-19
+XKD2272,Sally,Bargery,1980-08-25
+XKD2272,Boigie,Eastridge,1982-08-01
+
+to long NHI
+PAD78834,Serena,Bradshaw,1966-01-15
+
+no NHI
+,Marcelia,Jeffcoate,1985-12-17
+,Myra,Burks,1991-12-14

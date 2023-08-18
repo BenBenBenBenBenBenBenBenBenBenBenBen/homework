@@ -1,75 +1,88 @@
 CREATE DATABASE IF NOT EXISTS Referrals;
 USE Referrals;
-CREATE TABLE IF NOT EXISTS Gender (
-	gender VARCHAR(6) NOT NULL,
-    PRIMARY KEY (Gender)
-);
 
 CREATE TABLE IF NOT EXISTS Patient(
 	NHI VARCHAR(7) NOT NULL,
     firstName VARCHAR(20) NOT NULL,
     lastName VARCHAR(20) NOT NULL,
     DOB DATE NOT NULL,
-    gender VARCHAR(6) NOT NULL,
-    age TINYINT,
-    Primary Key (NHI),
-    FOREIGN KEY (Gender) REFERENCES Gender(gender)
+    Primary Key (NHI)
 );
 
-UPDATE Patient
-SET age = TIMESTAMPDIFF(YEAR, DOB, CURDATE()) -
-	(DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(DOB, '%m%d'));
+LOAD DATA INFILE 'C:/Temp/mysql/patient.csv'
+INTO TABLE Patient
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
 
 CREATE TABLE IF NOT EXISTS Department (
 	department VARCHAR(20) NOT NULL,
     PRIMARY KEY (department)
 );
 
+LOAD DATA INFILE 'C:/Temp/mysql/department.csv'
+INTO TABLE Department
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+
 CREATE TABLE IF NOT EXISTS Surgeon(
-	SurgeonID INT NOT NULL AUTO_INCREMENT,
+	surgeonID INT NOT NULL AUTO_INCREMENT,
     firstName VARCHAR(20) NOT NULL,
     lastName VARCHAR(20) NOT NULL,
     department VARCHAR(20),
-    Primary Key (SurgeonID),
+    Primary Key (surgeonID),
     FOREIGN KEY (department) REFERENCES Department(department)
 );
 
+LOAD DATA INFILE 'C:/Temp/mysql/surgeon.csv'
+INTO TABLE Surgeon
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+
 CREATE TABLE IF NOT EXISTS Referrer (
-	ReferrerID INT NOT NULL AUTO_INCREMENT,
+	referrerID INT NOT NULL AUTO_INCREMENT,
     firstName VARCHAR(20) NOT NULL,
     lastName VARCHAR(20) NOT NULL,
-    PRIMARY KEY (ReferrerID)
+    PRIMARY KEY (referrerID)
 );
 
-CREATE TABLE IF NOT EXISTS ReferredFrom (
-	referredFrom VARCHAR(20) NOT NULL,
-    PRIMARY KEY (referredFrom)
-);
+LOAD DATA INFILE 'C:/Temp/mysql/referrer.csv'
+INTO TABLE Referrer
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
 
 CREATE TABLE IF NOT EXISTS HealthTargetEligible (
 	healthTargetEligible VARCHAR(3) NOT NULL,
     PRIMARY KEY (healthTargetEligible)
 );
 
+LOAD DATA INFILE 'C:/Temp/mysql/healthTargetEligible.csv'
+INTO TABLE HealthTargetEligible
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+
 CREATE TABLE IF NOT EXISTS Referral(
 	referralID int NOT NULL AUTO_INCREMENT,
     referralDate DATE NOT NULL,
-    referredFrom VARCHAR(20),
-    ReferrerID INT,
-    dateAddedToWaitList DATE NOT NULL,
+    dateAddedToWaitList DATE,
     FSADate DATE,
     healthTargetEligible VARCHAR(3),
-    surgeonID INT NOT NULL,
+    referrerID INT,
     patientID VARCHAR(7) NOT NULL,
-    daysWaitingFromReferralDate int,
+    surgeonID INT NOT NULL,
     Primary Key (referralID),
-    CONSTRAINT FK_ReferredFrom FOREIGN KEY (referredFrom) REFERENCES ReferredFrom(referredFrom),
-    CONSTRAINT FK_Referrer FOREIGN KEY (ReferrerID) REFERENCES Referrer(ReferrerID),
+    CONSTRAINT FK_Referrer FOREIGN KEY (referrerID) REFERENCES Referrer(referrerID),
     CONSTRAINT FK_HealthTargetEligible FOREIGN KEY (healthTargetEligible) REFERENCES HealthTargetEligible(healthTargetEligible),
-    CONSTRAINT FK_Surgeon FOREIGN KEY (surgeonID) REFERENCES Surgeon(surgeonID),
-    CONSTRAINT FK_patient FOREIGN KEY (patientID) REFERENCES Patient(NHI)
+    CONSTRAINT FK_patient FOREIGN KEY (patientID) REFERENCES Patient(NHI),
+    CONSTRAINT FK_Surgeon FOREIGN KEY (surgeonID) REFERENCES Surgeon(surgeonID)
 );
 
-UPDATE Referral
-SET daysWaitingFromReferralDate = TIMESTAMPDIFF(DAY, referralDate, FSADate) -
-	(DATE_FORMAT(FSADate, '%m%d') < DATE_FORMAT(referralDate, '%m%d'));
+LOAD DATA INFILE 'C:/Temp/mysql/referral.csv'
+INTO TABLE Referral
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
