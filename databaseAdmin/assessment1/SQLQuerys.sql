@@ -8,13 +8,10 @@ USE Referrals;
 -- DELETE FROM department;
 
 
-SELECT concat(p.firstName, " ", p.lastName) AS "Paitent Name", s.department FROM referral r
-	Inner join patient p
-		ON r.patientID=p.NHI
+SELECT count(s.department) FROM referral r
 	INNER JOIN surgeon s
 		ON r.surgeonID=s.surgeonID
-	Where s.department = "Cardiothoracic"
-	ORDER BY p.lastName;
+	Where s.department = "Cardiothoracic";
     
 SELECT s.department, avg(DATEDIFF(r.FSADate, r.referralDate)) FROM referral r
 	INNER JOIN surgeon s
