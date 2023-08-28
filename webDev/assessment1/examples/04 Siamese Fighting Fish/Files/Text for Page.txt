@@ -1,0 +1,73 @@
+Page title
+==========
+
+Jane's Tropical Fish | Siamese Fighting Fish
+
+
+Heading text
+============
+
+Jane's Tropical Fish
+
+
+Main Menu
+=========
+
+Home
+Swordtail
+Angelfish
+Dwarf Gourami
+Siamese Fighting Fish
+Guppy
+
+Main Content Text
+=================
+
+Siamese Fighting Fish
+
+NOTE:
+1. The scientific name Betta splendens should be in italics.
+2. "labyrinth organ" is a link to en.wikipedia.org/wiki/Labyrinth_organ. This is a real page, so test your link.
+
+The Siamese fighting fish (Betta splendens), is a species in the gourami family which is popular as an aquarium fish. They are aggressive towards their own species. These fish have historically been the objects of gambling; two male fish are pitted against each other in a fight and bets are placed on which one will win. One fish is almost always killed as a result. To avoid this, male Siamese fighting fish are best isolated from one another. However, they can be paired with other fish.
+
+The species is native to the Mekong basin of Laos, Cambodia, Vietnam and Thailand, the latter formerly known as Siam, which is why the fish is called a Siamese Fighting Fish. The fish can be found in standing waters of canals, rice paddies and floodplains. To compensate for the low levels of oxygen in such water, the Siamese Fighting Fish has a lung-like labyrinth organ that allows it to breathe air directly.
+
+
+Secondary Content Text
+======================
+
+What's New
+
+We are starting to list our normal and rare plants and will eventually have buy now options. Please e-mail any queries for price, size, supply and availability.
+
+Live reptile food now in store. Live crickets, locusts and mealworms fresh every Wednesday. We are pleased to take weekly orders on Mondays.
+
+Sign up for our weekly newsletter and receive a $10 gift voucher.
+
+
+
+Images
+======
+
+All images are in the 'images' folder.
+
+Location          Image                          Text for screen readers or if image does not download
+Header image      janes-tropical-fish.jpg   	 Jane's Tropical Fish
+Main content #1   red-betta.jpg                  Red Siamese Fighting Fish
+Main content #2   green-betta.jpg                Green Siamese Fighting Fish
+Footer image #1   neon-tetra.jpg                 Neon Tetra
+Footer image #2   bronze-catfish.jpg             Bronze Catfish
+
+
+Footer
+======
+
+Neon Tetra
+Bronze Catfish
+
+About Us
+FAQs
+Contact Us
+Terms & Conditions
+

@@ -1,0 +1,295 @@
+/* RESET */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    /* Cancel out some differences between browser defaults */
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+* {
+    /* The width of an element will be the size of its border box, 
+       not its content box (which is the normal default). */
+    box-sizing: border-box;
+}
+
+img {
+    /* Subtle: remove space under images - normally they would line up 
+       with a text baseline, but text characters like j, y, and q can 
+       descend below the baseline. So, images reserve space for the
+       text descenders. Aaah, don't worry about it...
+       If you really want to see this in action, comment it out and see
+       what happens to the image in the header when the window is 
+       narrow (single-column layout; no flexbox in the header). */
+    vertical-align: bottom;
+}
+
+/* END OF RESET */
+
+
+/* LAYOUT */
+
+/* Margins and padding */
+
+main, nav, aside, footer {
+    padding: 1em;
+}
+
+nav li {
+    margin-bottom: 0.5em;
+}
+
+aside > div {
+    margin-bottom: 2em;
+}
+
+
+/* TYPOGRAPHY */
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.caption {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.scientific-name {
+    font-style: italic;
+}
+
+
+/* COLOUR SCHEME & BORDERS */
+
+body {
+    color: #444444;
+}
+
+header, footer {
+    background-color: #113a0e;
+    color: #ffffff;
+}
+
+nav {
+	background-color: #c1d8be;
+}
+
+nav a {
+    color: #000000;
+}
+
+aside {
+	background-color: #dedede;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+.selected, a:hover {
+    color: #ff0000;
+}
+
+
+
+/* NAVIGATION */
+
+nav ul, footer ul {
+    list-style-type: none;
+}
+
+nav a, footer a {
+    text-decoration: none;
+}
+
+
+/* IMAGES */
+
+img {
+    width: 100%;
+}
+
+.lead-in {
+    width: 8em;
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+
+/* RESPONSIVENESS */
+
+/* Page Grid */
+
+@media screen and (min-width: 54em) {
+    
+    /* LAYOUT */
+    
+    /* Page grid */
+    body {
+        display: grid;
+        grid-template-columns: 1fr 40rem 12rem 1fr;
+    }
+    
+    header, nav, footer {
+        grid-column: 2 / 4;
+    }
+
+    main {
+        grid-column: 2;
+    }
+
+    aside {
+        grid-column: 3;
+    }
+    
+    /* Flexboxes */
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        /* Try it without this margin and then see the difference when 
+           there is margin. */
+        margin-left: 1em;
+    }
+
+    header > img {
+        /* Set the size of the header image to match column width. */
+        width: 12rem;
+    }
+    
+    nav ul {
+        display: flex;
+    }
+    
+    nav li {
+        /* Push the navigation items to the right of each other. */
+        margin-right: 2em;
+        
+        /* Override the bottom margin above. */
+        margin-bottom: 0;
+    }
+    
+    footer ul {
+        display: flex;
+        
+        /* Push the flexed items to the right (the end of the flexbox). */
+        justify-content: flex-end;
+    }
+    
+    footer li {
+        /* Push the footer items to the left of each other. Opposite of nav above. */
+        margin-left: 2em;
+    }
+    
+    #fish-images {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #fish-images > div {
+        /* To get a bit of space between the images, set their parent
+           boxes (the divs) to be a bit less than half (50%) of the width
+           of the flexbox. */
+        width: 48%;
+    }
+
+    
+}
+
+@media screen and (min-width: 82em) {
+    
+    /* LAYOUT */
+    
+    /* Page grid */
+    body {
+        grid-template-columns: 1fr 20rem 40rem 20rem 1fr;
+    }
+
+    header, footer {
+        grid-column: 2 / 5;
+    }
+
+    nav {
+        grid-column: 2;
+    }
+
+    main {
+        grid-column: 3;
+    }
+
+    aside {
+        grid-column: 4;
+    }
+    
+    /* Flexboxes */
+    
+    /* We don't need to create any flexboxes in this media query, because
+       the previous media query will be true when this one is, so the 
+       flexboxes above will also be used at the larger window width that
+       this media query targets. We do, however, have to "unflex" one 
+       flexbox - read on... */
+    
+    nav ul {
+        /* Having changed the main menu to be a flexbox in the previous
+           media query, we now need the main menu to _not_ be a flexbox
+           any more. How do we do that? We set its display property back
+           to the default, which is block. We don't have to worry about
+           the other flexbox properties set on nav ul above because they
+           will now be ignored because the ul is not a flexbox any more.
+           */
+        display: block;
+    }
+    
+    nav li {
+        /* Add some bottom margin back to the main menu items. Note how
+           we started with some bottom margin in the default CSS above
+           the media queries. Then we removed the bottom margin for the
+           middle-sized layout (previous media query). Now we are adding
+           the bottom margin back in again. Isn't CSS fun? */
+        margin-bottom: 0.5em;
+    }
+    
+    nav a {
+        /* Make the main menu items a bit bigger. */
+        font-size: 1.2rem;
+    }
+    
+    header > img {
+        /* Increase the size of the header image to match column. */
+        width: 20rem;
+    }
+
+}

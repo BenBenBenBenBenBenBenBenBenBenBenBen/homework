@@ -1,0 +1,49 @@
+Page title
+==========
+
+David Gilmour
+
+
+Heading text
+============
+
+David Gilmour
+
+
+Main menu
+=========
+
+Biography
+Musical style
+Discography
+Equipment
+
+
+Main content text
+=================
+
+Musical style
+
+David Gilmour's style is often characterised by blues-influenced phrasing, expressive note bends and sustain. Gilmour explains how he achieves his signature tone: "I usually use a fuzz box, a delay and a bright EQ setting... [to get] singing sustain... you need to play loud—at or near the feedback threshold. It's just so much more fun to play... when bent notes slice right through you like a razor blade."
+
+In 2011, Gilmour was rated the 14th greatest guitarist by Rolling Stone magazine. In January 2007, Guitar World readers voted Gilmour's solos on "Comfortably Numb", "Time" and "Money" into the top 100 Greatest Guitar Solos ("Comfortably Numb" was voted the 4th, "Time" was voted the 21st and "Money" was voted the 62nd greatest solo of all time).
+
+In 2006, a writer for Guitar World, Jimmy Brown, described Gilmour's playing style as "characterised by simple, huge-sounding riffs; gutsy, well-paced solos; and rich, ambient chordal textures". According to Brown, Gilmour's solos on "Money", "Time" and "Comfortably Numb" "cut through the mix like a laser beam through fog".
+
+
+Images
+======
+
+All images are in the 'images' folder.
+
+Location              Image
+Top		              david-gilmour-in-concert.jpg
+Side                  david-gilmour.jpg
+
+
+Footer
+======
+Pink Floyd
+Fender Guitars
+Message Board
+

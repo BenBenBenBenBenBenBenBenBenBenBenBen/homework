@@ -1,0 +1,242 @@
+/* RESET */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ 
+* {
+    box-sizing: border-box;
+}
+
+/* END OF RESET */
+
+
+/* LAYOUT */
+
+/* Flexboxes */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    
+    /* Vertically centre the two flex items - note the vertical alignment of 
+       the header text. */
+    align-items: center;
+}
+
+header > img {
+    width: 4rem;
+}
+
+/* Margins and padding */
+
+nav, main, aside, footer {
+    padding: 1em;
+}
+
+header > p {
+    margin-right: 1em;
+}
+
+aside div {
+    margin-bottom: 2em;
+    padding: 2em;
+}
+
+
+/* TYPOGRAPHY */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+header > p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+aside {
+    text-align: center;
+}
+
+aside p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.instrument-name {
+    font-style: italic;
+}
+
+
+/* COLOUR SCHEME & BORDERS */
+
+body {
+    color: #444;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+}
+
+aside > div {
+    background-color: #e0e0e0;
+    
+    /* Investigate borders a bit more... */
+    border: 1px solid #888;
+    border-radius: 0.5em;
+}
+
+nav, footer {
+    background-color: #444;
+}
+
+nav a, footer a {
+    color: #fff;
+}
+
+.selected, a:hover {
+    color: #f00;
+}
+
+
+/* NAVIGATION */
+
+nav ul, footer ul {
+    list-style-type: none;
+}
+
+nav a, footer a {
+    text-decoration: none;
+}
+
+
+/* IMAGES */
+
+/* Don't forget this! */
+img {
+    width: 100%;
+}
+
+
+/* RESPONSIVENESS */
+
+@media screen and (min-width: 42em) {
+    
+    /* Page grid */
+
+    body {
+        display: grid;
+        
+        /* One fixed-width central column, with flexible space on either side. */
+        grid-template-columns: 1fr 40rem 1fr;
+    }
+    
+    header, nav, footer {
+        grid-column: 1 / 4;
+    }
+
+    main, aside {
+        grid-column: 2;
+    }
+    
+    /* Flexboxes */
+    
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+        
+    aside {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    aside > div {
+        /* Make the flexed divs a bit less than 50% wide, so that
+           there can be some space between them (via justify-content
+           on the parent flexbox. */
+        width: 48%;
+    }
+    
+    footer ul {
+        display: flex;
+        justify-content: center;
+    }
+   
+    /* Margins and padding */
+    
+    nav li {
+        /* Push the menu items apart with right and left margins. */
+        margin: 0 1em;
+    }
+
+    footer li {
+        /* Push the list items apart horizontally. We need equal left and right
+           margins to keep the centering of the list items. */
+        margin: 0 1em;
+    }
+
+}
+
+@media screen and (min-width: 62em) {
+    
+    /* Page grid */
+
+    body {
+        /* Two fixed-width central columns, with flexible space on either side. */
+        grid-template-columns: 1fr 20rem 40rem 1fr;
+    }
+
+    header, nav, footer {
+        grid-column: 1 / 5;
+    }
+
+    main {
+        grid-column: 3;
+    }
+
+    aside {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+
+    /* Other layout */
+    
+    aside {
+        /* We don't want this to be a flexbox anymore, so change it back to a block,
+           which is its default. */
+        display: block;
+    }
+    
+    aside > div {
+        /* These need to be the full width of the aside again. We set them to
+           48% in the flexbox above, so override that here. */
+        width: 100%;
+    }
+    
+}

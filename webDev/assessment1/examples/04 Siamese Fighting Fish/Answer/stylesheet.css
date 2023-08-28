@@ -1,0 +1,294 @@
+﻿/* RESET */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* END OF RESET */
+
+
+/* LAYOUT */
+
+/* No grid or flexboxes in the "default" layout, which is a single column. */
+
+/* Margins, padding & borders */
+
+header {
+    padding-bottom: 1.5em;
+}
+
+nav, main, aside, footer {
+    padding: 1em;
+}
+
+aside {
+    padding-top: 2em;
+}
+
+h3 {
+    border-bottom: 2px solid #2B6627;
+}
+
+footer > div {
+    margin-bottom: 2em;
+}
+
+
+/* TYPOGRAPHY */
+
+body {
+    font-family: "Lucida Sans", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+footer p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.scientific-name {
+    font-style: italic;
+}
+
+
+/* COLOUR SCHEME & BORDERS */
+
+body {
+    color: #444;
+}
+
+header {
+    background-color: #54894d;
+} 
+
+nav {
+    background-color: #f3f3f3;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2, h3 {
+    color: #2B6627;
+}
+
+nav a {
+    color: #444;
+}
+
+footer {
+    background-color: #333;
+}
+
+footer, footer a {
+    color: #fff;
+}
+
+.active, a:hover  {
+    color: #f00;
+}
+
+
+/* NAVIGATION */
+
+nav ul, footer ul {
+    list-style-type: none;
+}
+
+nav li {
+    padding: 0.5em 2em 0.5em 0;
+}
+
+nav a, footer a {
+    text-decoration: none;
+}
+
+
+/* IMAGES */
+
+img {
+    /* Always have this rule in your CSS! */
+    width: 100%;
+}
+
+main img {
+    float: right;
+    width: 10rem;
+    margin: 0 0 1em 1em;
+}
+
+
+/* RESPONSIVENESS */
+
+@media screen and (min-width: 42em) {
+    /* Two content columns with the header and nav side by side. */
+    
+    /* Page grid */
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr 20rem 20rem 1fr;
+    }
+    
+    header {
+        grid-column: 2;
+    }
+    
+    nav {
+        grid-column: 3;
+    }
+    
+    main, aside, footer {
+        grid-column: 2 / 4;
+    }
+    
+    /* Flexboxes */
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer > div {
+        width: 20%;
+    }
+    
+    #bronze-catfish {
+        /* Flexed items (children of a flexbox) have a default
+           order of 0, which means they will be positioned in 
+           the flexbox in "source order" (their order in the HTML).
+           We can change this order - give one item an order value
+           greater than 0 and it will be moved to the end of the
+           flexbox. */
+        order: 1;
+    }
+    
+    /* Margins and padding */
+    
+    main, aside {
+        /* Remove the side padding, so that text lines up
+           with the edges of the header and nav. */
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    footer li {
+        padding: 0 1em;
+    }
+
+}
+
+
+@media screen and (min-width: 62em) {
+    /* Two content columns with the header, nav and aside in one
+       column and the main in another. */
+    
+    /* Page grid */
+ 
+    body {
+        display: grid;
+        grid-template-columns: 1fr 20rem 40rem 1fr;
+    }
+
+    header, nav {
+        grid-column: 2;
+    }
+
+    main {
+        grid-column: 3;
+        grid-row: 1 / 4;
+    }
+
+    aside {
+        grid-column: 2;
+    }
+
+    footer {
+        grid-column: 2 / 4;
+    }
+    
+    /* Flexboxes */
+    
+    footer ul {
+        /* The ul is itself a flexbox, so now we have a flexbox inside a flexbox. */
+        display: flex;
+        justify-content: center;
+    }
+
+    
+    /* Margins and Padding */
+    
+    main {
+        /* Add some padding back in to create some space again. */
+        padding-left: 2em;
+    }
+    
+}
+
+
+@media screen and (min-width: 82em) {
+    /* Three content columns. */
+ 
+    /* Page grid */
+ 
+    body {
+        display: grid;
+        grid-template-columns: 1fr 20rem 40rem 20rem 1fr;
+    }
+
+    header, nav {
+        grid-column: 2;
+    }
+
+    main {
+        grid-column: 3;
+        grid-row: 1 / 3;
+    }
+
+    aside {
+        grid-column: 4;
+        grid-row: 1 / 3;
+    }
+
+    footer {
+        grid-column: 2 / 5;
+    }
+
+    /* Margins and Padding */
+    
+    main {
+        /* Add some padding back in to create some space again. */
+        padding-right: 2em;
+    }
+
+}

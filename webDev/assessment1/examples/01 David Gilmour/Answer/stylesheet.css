@@ -1,0 +1,185 @@
+/* RESET */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ 
+* {
+    box-sizing: border-box;
+}
+
+
+/* LAYOUT */
+
+nav, main, footer {
+    padding: 1em;
+}
+    
+
+/* TYPOGRAPHY */
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+nav a {
+    text-transform: uppercase;
+}
+
+.magazine-title {
+    font-style: italic;
+}
+
+
+/* COLOUR SCHEME & BORDERS */
+
+body {
+    color: #444444;
+}
+
+header {
+    background-color: #3e3e3e;
+    color: #ffffff;
+}
+
+aside {
+    background-color: #444444;
+}
+
+nav {
+    background-color: #222222;
+}
+
+nav a {
+    color: #ffffff;
+}
+
+footer {
+    background-color: #cccccc;
+}
+
+footer a {
+    color: #333333;
+}
+
+.selected {
+    color: #ffff00;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+
+/* NAVIGATION */
+
+nav ul, footer ul {
+    list-style-type: none;
+}
+
+nav li, footer li {
+    margin-bottom: 0.5em;
+}
+
+nav a, footer a {
+    text-decoration: none;
+}
+
+
+/* IMAGES */
+
+img {
+    /* The most important CSS rule of all! Make images as wide as their parent boxes. */
+    width: 100%;
+}
+
+
+/* RESPONSIVENESS */
+
+@media screen and (min-width: 62em) {
+    
+    /* Page grid */
+    
+    body {
+        /* Position the main elements in a four-column grid.
+           The two outside columns create the white space. */
+        display: grid;
+        grid-template-columns: 1fr 20rem 40rem 1fr;
+    }
+
+    header, nav, footer {
+        grid-column: 2 / 4;
+    }
+
+    main {
+        grid-column: 3;
+    }
+    
+    aside {
+        grid-column: 2;
+        /* Move the aside up to the same row as the <main> element. */
+        grid-row: 3;
+    }
+
+    /* Flexboxes */
+    
+    header {
+        display: flex;
+        
+        /* Vertically align the image and header text - this also 
+           stops the image's dimensions from being "distorted". */
+        align-items: center;
+    }
+
+    header h1 {
+        /* Allow the h1 to take up all available space in the flexbox. */
+        flex-grow: 1;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    
+    /* Margins and padding */
+    
+    main {
+        padding: 2em 0 2em 2em;
+    }        
+
+    
+    /* MISC */
+    
+    header > img {
+        /* The image in the header is the same width as the second column in the grid. */
+        width: 20rem;
+    }
+
+}

@@ -1,0 +1,77 @@
+Title
+=====
+
+Maori Musical Instruments :: Pukaea
+
+
+Header
+======
+
+[image file:] logo.jpg
+
+Maori Musical Instruments
+
+[These are links:]
+Register
+Log In
+
+
+Main menu
+=========
+
+Koauau
+Pukaea
+Putatara
+
+
+Text for images
+===============
+
+The following text should display if images cannot be loaded:
+logo.jpg: "Maori Musical Instruments Logo"
+koauau.jpg: "Koauau"
+pukaea.jpg: "Pukaea"
+pukaea-angled.jpg: "Pukaea Angled View"
+
+
+Page text
+=========
+
+Pukaea (long trumpet)
+
+Pukaea were typically used as loud, dramatic, signalling devices during war, but were also used on ceremonial occasions during times of peace. Like other wind instruments, pukaea belong to the family of Hineraukatauri (goddess of flutes), and deliver a strong, trumpeting, male sound.
+
+Pukaea
+
+Length: 493mm
+Width: 92mm
+Depth: 88mm
+
+
+Column 1
+========
+
+Latest Acquisitions
+
+Koauau (flute), early 19th century, maker unknown. Oldman Collection. Gift of the New Zealand Government, 1992. Te Papa (OL000035).
+
+[Note that "Te Papa" is a hyperlink that goes to collections.tepapa.govt.nz]
+
+
+Column 3
+========
+
+News
+
+Karanga Weka Gift
+2 August 2018
+
+Kia ora. A karanga weka has been gifted to the museum by Clem Mellish, the artist. Once the item has been photographed and catalogued it will become part of our online collection.
+
+
+Bottom of page
+==============
+
+[copyright symbol] Ara, 2022
+Images from Te Papa
+Website by CmBDesign

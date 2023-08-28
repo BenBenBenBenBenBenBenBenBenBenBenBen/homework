@@ -1,0 +1,284 @@
+/* RESET */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    /* Cancel out some differences between browser defaults */
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul, ol {
+    list-style-position: inside;
+}
+
+
+/* LAYOUT */
+
+/* Flexboxes */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 10rem;
+}
+
+header h1 {
+    flex-grow: 1;
+}
+
+/* Other layout - padding, etc. */
+nav, main, aside, footer {
+    padding: 1em;
+}
+
+header {
+    padding-right: 1em;
+}
+
+#features ol {
+    padding-left: 2em;
+}
+    
+    
+/* TYPOGRAPHY */
+
+body {
+    font-family: "Lucida Sans", Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.25rem;
+}
+
+header h1 {
+    text-align: center;
+}
+ 
+main h1 {
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 1rem;
+    margin-bottom: 2em;
+}
+
+aside h2, #features h3 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+nav a {
+    text-transform: uppercase;
+}
+
+.caption {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.instrument-family {
+    font-style: italic;
+}
+
+
+/* COLOUR SCHEME & BORDERS */
+
+body {
+    color: #444444;
+}
+
+header, footer {
+    background-color: #2f5e31;
+    color: #ffffff;
+}
+
+nav {
+    background-color: #133013;
+}
+
+#features {
+    border: 1px solid #666666;
+}
+
+h1, h2 {
+    color: #56d308;
+}
+
+header a, nav a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #80f939;
+}
+
+.selected {
+    color: #56d308;
+}
+
+
+/* NAVIGATION */
+
+header ul, nav ul, footer ul {
+    list-style-type: none;
+}
+
+header a, nav a {
+    text-decoration: none;
+}
+
+
+/* IMAGES & VIDEOS */
+
+img {
+    width: 100%;
+}
+
+main img {
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 40em) {
+
+    /* Page grid */
+    
+    body {
+        display: grid;
+        grid-template-columns: 1fr 36em 1fr;
+    }
+
+    header, nav, footer {
+        grid-column: 1 / 4;
+    }
+    
+    main, aside {
+        grid-column: 2;
+    }
+    
+
+    /* Flexboxes */ 
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li {
+        /* Push the list items away from each other in the flexbox */
+        margin: 0 4em;
+    }
+    
+    #features {
+        display: flex;
+    }
+
+    #features > * {  /* I expect students will specify the children, which is OK. */
+        width: 50%;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    /* Other Layout - padding, etc.*/
+    
+    nav {
+        padding: 0.5em;
+    }
+    
+    #features {
+        margin-top: 2em;
+    }
+    
+    #features > * {
+        padding: 1em;
+    }
+    
+    header img {
+        width: 16rem;
+    }
+    
+    /* Typography */
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (min-width: 74em) {
+    
+    /* Page grid */
+    body {
+        grid-template-columns: 1fr 12em 36em 24em 1fr;
+    }
+
+    header, nav, footer {
+        grid-column: 2 / 5;
+    }
+    
+    main {
+        grid-column: 3;
+    }
+    
+    #acquisitions {
+        grid-column: 2;
+        grid-row: 3;
+    }
+    
+    #news {
+        grid-column: 4;
+        grid-row: 3;
+    }
+
+    /* Flexboxes */
+    
+    header ul {
+        display: flex;
+    }    
+
+    header li {
+        /* Push the list items away from each other in the flexbox */
+        margin-right: 2em;
+    }  
+
+    /* Other layout - padding, etc. */
+    main, aside, footer {
+        padding: 2em;
+    }
+    
+    /* Colours */
+    
+    aside {
+        background-color: #eeeeee;
+    }
+    
+}   
+    
