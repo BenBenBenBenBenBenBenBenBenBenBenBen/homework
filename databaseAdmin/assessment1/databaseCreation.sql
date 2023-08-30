@@ -97,3 +97,9 @@ SET referralDate = CASE WHEN @referralDate <> '' THEN STR_TO_DATE(@referralDate,
 dateAddedToWaitList = CASE WHEN @dateAddedToWaitList <> '' THEN STR_TO_DATE(@dateAddedToWaitList, "%d/%m/%Y") ELSE NULL END,
 FSADate = CASE WHEN @FSADate <> '' THEN STR_TO_DATE(@FSADate, "%d/%m/%Y") ELSE NULL END,
 healthTargetEligible = NULLIF(@healthTargetEligible, "");
+
+CREATE VIEW V_patientAge AS
+	SELECT p.NHI, TIMESTAMPDIFF(YEAR, p.DOB, CURDATE()) AS "age" FROM patient p;
+
+CREATE VIEW V_daysWaiting AS
+	SELECT r.referralID, DATEDIFF(IFNULL(r.FSADate, CURDATE()), r.dateAddedToWaitList) AS "days" FROM referral r;

@@ -1,0 +1,95 @@
+/* RESET - DO NOT EDIT */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, a, article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    /* Cancel out some differences between browser defaults */
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+ 
+* {
+    /* The width of an element will be the size of its border box, not its content box (which is the normal default). */
+    box-sizing: border-box;
+}
+
+/* END OF RESET */
+
+
+/* YOUR ANSWER HERE */
+
+img {
+    width:100%;
+}
+
+body {
+    color: #444444;
+    font-family: Helvetica Neue,Helvetica,Arial; 
+}
+
+header {
+    background-color: #3e3e3e;
+}
+
+nav {
+    background-color: #222;
+    text-transform:uppercase;
+}
+
+aside {
+    background-color: #444;
+}
+
+footer {
+    background-color: #ccc;
+}
+
+h1 {
+    color: #fff;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+}
+
+nav ul, footer ul {
+    list-style-type: none;
+}
+
+nav a, footer a {
+    text-decoration: none;
+}
+
+li, ul {
+    padding: 0.5rem;
+}
+
+.selected {
+    color: yellow;
+}
+
+main {
+    padding: 1rem;
+}
+
+a:hover {
+    color: red;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #444444;
+}
+
+@media screen and (min-width: 53rem) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr 17rem 34rem 1fr;
+    }
+}
