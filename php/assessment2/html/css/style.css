@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#login {
+    background-color: lightgreen;
+}
+
+#loginFormBackground {
+    margin-top: 3rem;
+    padding-top: 0.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 20%;
+    height: 24rem;
+    background-color: white;
+    border-radius:0.2rem;
+}
+
+.loginForm {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    width: 80%;
+}
+
+.loginForm div input {
+    width: 100%;
+}
+
+#loginFormBackground button {
+    width: 100%;
+}
+
+#registerFormBackground {
+    margin-top: 3rem;
+    padding-top: 0.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 20%;
+    height: 35rem;
+    background-color: white;
+    border-radius:0.2rem;
+}
+
+#registerFormBackground button {
+    width: 100%;
+}
