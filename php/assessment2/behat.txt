@@ -1,0 +1,65 @@
+feature 1
+Buying a product
+    In order to buy products
+    As a buyer
+    I need to be able to put interesting products into a basket
+    I need to be able checkout those items
+    I need to be able to arrange delivery
+Rules
+    -standard delivery 5$
+    -rural delivery 10$
+    -fast delivery 15$
+    -standard delivery free over 50$ basket
+Scenario 1
+    buying a pumpkin with standard delivery
+    Given there is a "pumpkin", which costs $2.99 and standard delivery of $5
+    When I add the "pumpkin" to the basket
+    Then I should have 1 product in the basket
+    And the overall basket price should be $7.99
+Scenario 2
+    buying 20 pumpkin with standard delivery
+    Given there is a "pumpkin", which costs $2.99
+    When I add the "pumpkin" to the basket
+    Then I should have 20 product in the basket
+    And the overall basket price should be $59.80 and free delivery
+
+feature 2
+Selling a product
+    In order to sell products
+    As a seller
+    I need to be able to list items to sell
+Rules
+    -FreshCart takes 10% of sales
+    -only food items can be sold
+Scenario 1
+    selling a pumpkin for 2.99
+    Given I have a pumpkin to sell
+    When I list the "pumpkin"
+    Then I should have 1 product for sale
+    And the after FreshCart takes 10% when the pumpkin sells i get $2.691
+Scenario 2
+    selling a apple for 199.99
+    Given I have a apple to sell
+    When I list the "apple"
+    Then I should have 1 product for sale
+    And the after FreshCart takes 10% when the apple sells i get 179.991
+
+feature 3
+manage users on the site
+    In order to manage users on the site
+    As a business administrator
+    I need to be able to see all users
+    I need to be able to remove unwelcome items
+    I need to remove bad acting users
+Scenario 1
+    removing an item that isn't food
+    Given there is an item that isn't food
+    When I remove the item
+    Then seller will be notified
+    and the user will be selling 1 less item
+Scenario 2
+    removing a user that constantly tries to sell items that aren't food
+    Given there is a user that constantly tries to sell items that aren't food
+    When I remove the user he will be notified
+    Then all the users items will be removed
+    And the user no longer be able to sell anything
