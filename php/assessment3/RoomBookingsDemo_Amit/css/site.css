@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin: 8px 12px;
+}
+p {
+	margin: 6px 4px;
+	padding: 0px 4px;
+}
+
+.logo {
+	float: left;
+}
+.header {
+	margin-left: 200px;
+	font-size: 2em;
+	vertical-align: center;
+}
+.menu {
+	clear: both;
+	background-color: #ddd; 
+}
+
+.menu li {
+	width: 120px;
+	display: inline-block;
+	background-color: #eee; 
+	text-align: center;
+}
+
+.menu li a{
+	text-decoration: none;
+	padding: 0 8px 0 8px;
+}
+
+.menu li a:hover{
+	text-decoration: underline;
+	background-color: #fff;
+}
+
+.login {
+	margin: 0px 8px;
+}
+
+.login a {
+	margin-left: 18px;
+}
+label {
+	width: 120px;
+	display: inline-block;
+	text-align: right;
+	margin-right: 6px;
+}
+input {
+	width: 240px;
+}
+
+input[type="submit"] {
+	width: 120px;
+	margin-left: 128px;
+	margin-bottom: 16px;
+}
+
+.footer {
+	background-color: #ddd; 
+}
+
+th {
+	padding: 0 8px 0 8px;
+	text-align: left;
+	background-color: #333;
+	color: #fff;
+}
+
+td {
+	background-color: #EE0;
+
+}
+.odd  td{
+	background-color: #eee;
+}
+
+.even td {
+	background-color: #ddd;
+}
+
+.currentPrice {
+	text-align: right;
+}
