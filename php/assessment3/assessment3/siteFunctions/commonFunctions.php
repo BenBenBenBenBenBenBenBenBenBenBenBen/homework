@@ -4,8 +4,8 @@ include_once ("framework/MySQLDB.php");
 function getConnection() {
 	$host = 'localhost' ;
 	$dbUser ='root';
-	$dbPass ='melastom1';
-	$dbName ='roombookings';
+	$dbPass ='';
+	$dbName ='FreshCart';
 
     // create a new database object and connect to server
 	$db = new MySQL($host, $dbUser, $dbPass, $dbName);

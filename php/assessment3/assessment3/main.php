@@ -6,7 +6,16 @@ require_once 'siteFunctions/masterPage.php';
 		header("location: memberPage.php");
 	} else {
 			
-		$content='';
+		if ($bookings->size()> 0) {
+			$content.='<h3>Your current bookings are shown below:</h3><br/>';
+			$table=new HtmlTable ($product);
+			$content.=$table->getHtml( array (
+				'bookingID'=>'BookingID', 
+				'memberID'=>'Membership ID',
+				'<<dateTaken|date>>'=>'Booked on'));
+		} else {
+			$content.='<p>You have no current bookings</p>';
+		}
 
 				   
 		$pg->setTitle('Welcome to FreshCart');

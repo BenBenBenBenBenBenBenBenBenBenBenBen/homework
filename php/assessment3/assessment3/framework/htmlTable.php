@@ -17,6 +17,26 @@ class HtmlTable
 		$this->title = $theTitle;
 	}
 	
+	public function getProduct($params) {
+		while ( $row = $this->results->fetch() ) {
+			$html .= $this->detailRow ($params, $row, $rowClass);
+		}
+		
+		return $html.'</table>'.PHP_EOL ;
+	}
+	
+	// make an HTML table row for each database row
+	private function productRow ($params, $row, $rowClass) {
+		foreach ($params as $key=>$value) {
+			$ans .="<div class='foodItem'>
+				<img src={} alt={}>
+				<p>{}</p>
+				<p>$2.99</p>
+			</div>";
+		}
+		return $ans;
+	}
+
 	// Create an html table from the result set
 	public function getHTML($params) {
 		$html='<table'.(($this->title==null) ? '':" title=\"$this->title\"").'>';
@@ -44,7 +64,7 @@ class HtmlTable
 	private function detailRow ($params, $row, $rowClass) {
 		$ans ='<tr class="'.$rowClass.'">'.PHP_EOL;
 		foreach ($params as $key=>$value) {
-			$ans .=$this->applyTemplate($row, $key);		
+			$ans .=$this->applyTemplate($row, $key);
 		}
 		$ans .= "</tr>".PHP_EOL; 
 		return $ans;

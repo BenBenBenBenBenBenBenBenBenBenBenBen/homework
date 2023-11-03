@@ -4,11 +4,7 @@ include_once ("framework/MySQLDB.php");
 function getConnection() {
 	$host = 'localhost' ;
 	$dbUser ='root';
-<<<<<<< HEAD
-	$dbPass ='melastom1';
-=======
 	$dbPass ='';
->>>>>>> 8a310f5db5835a6e766bcb098c8113828b409a30
 	$dbName ='roombookings';
 
     // create a new database object and connect to server
