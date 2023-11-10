@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>FreshCart Your Grocery Destination</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="img/favicon_io/site.webmanifest">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <a href="loggedIn.html" id="logo"><img src="img/logo.jpeg" alt="FreshCart Logo"></a>
+            <div id="headerText">
+                <h1>FreshCart <span id="tagLine"><br>Your Grocery Destination</span></h1>
+                <input type="text" placeholder="Search...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <div id="loginLink">
+                    <a href="sellerPortalSellingItems.html">Sales portal</a>
+                    <a href="index.html">logout</a>
+                </div>
+            </div>
+        </header>
+        <main id="sellerMain">
+            <h1>List an item</h1>
+            <nav>
+                <h2>Selling</h2>
+                <ul>
+                    <li><a href="sellerPortalSellingItems.html">Items im selling</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">List an item</a></li>
+                </ul>
+                <ul>
+                    <li><a href="sellerPortalSoldItems.html">Sold items</a></li>
+                </ul>
+            </nav>
+            <div id="listItem">
+                <form>
+                    <form id="loginFormBackground">
+                        <div id="loginForm">
+                            <div>
+                                <label id="itemName"><b>Item name</b></label><br>
+                                <input type="text" placeholder="Enter Item name" name="itemName" required><br><br>
+            
+                                <label id="itemDescription"><b>Item description</b></label><br>
+                                <input type="password" placeholder="Enter Item description" name="itemDescription" required><br><br>
+                            </div>
+
+                            <label id="itemImage"><b>Item image</b></label><br>
+                                <input type="file" id="itemImage" name="filename"><br><br>
+
+                            <button type="submit" onclick="window.location.href='sellerPortalSellingItems.html';">List Item</button><br><br>
+                            <button type="button" onclick="window.location.href='sellerPortalSellingItems.html';">Cancel</button>
+                        </div>
+                    </form>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
